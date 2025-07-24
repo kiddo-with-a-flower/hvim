@@ -74,14 +74,14 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 function toggle_floating_terminal()
    local term = require("toggleterm.terminal").Terminal
    if not float_term then
-   	float_term = term:new({ direction = "float" })
+       float_term = term:new({ direction = "float" })
    end
 
-  if float_term:is_open() then
-    float_term:close()
-  else
-    float_term:open()
-  end
+   if float_term:is_open() then
+     float_term:close()
+   else
+     float_term:open()
+   end
 end
 
 -- Key mapping for toggling floating terminal
