@@ -68,23 +68,3 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
--- ToggleTerm
--- Function to toggle floating terminal
-function toggle_floating_terminal()
-   local term = require("toggleterm.terminal").Terminal
-   if not float_term then
-       float_term = term:new({ direction = "float" })
-   end
-
-   if float_term:is_open() then
-     float_term:close()
-   else
-     float_term:open()
-   end
-end
-
--- Key mapping for toggling floating terminal
-keymap("n", "<C-\\>", "<cmd>lua toggle_floating_terminal()<CR>", { noremap = true, silent = true })
-keymap("t", "<C-\\>", "<cmd>lua toggle_floating_terminal()<CR>", { noremap = true, silent = true })
-
