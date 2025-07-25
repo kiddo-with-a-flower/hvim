@@ -88,5 +88,3 @@ end
 keymap("n", "<C-\\>", "<cmd>lua toggle_floating_terminal()<CR>", { noremap = true, silent = true })
 keymap("t", "<C-\\>", "<cmd>lua toggle_floating_terminal()<CR>", { noremap = true, silent = true })
 
--- NvimTree
-keymap("n", "<Leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
