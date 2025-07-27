@@ -35,6 +35,5 @@ return {
       config = function(_,opts)
          vim.lsp.enable("clangd")
       end,
-      build = "<cmd>COQdeps<CR>"
    }
 }
