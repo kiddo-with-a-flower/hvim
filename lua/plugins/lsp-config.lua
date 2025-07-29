@@ -35,5 +35,14 @@ return {
       config = function(_,opts)
          vim.lsp.enable("clangd")
       end,
+   },
+   {
+      'numToStr/Comment.nvim',
+      opts = {
+      },
+      keys = {
+         {'gcc', desc = "Toggle single line comment"},
+         {'gbc', desc = "Toggle block comment"},
+      },
    }
 }
