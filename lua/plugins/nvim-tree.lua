@@ -1,3 +1,11 @@
+-- This function shortly labels the current directory
+-- to be readabe in the tree header
+local function label(path)
+  path = path:gsub(os.getenv 'HOME', '~', 1)
+  return path:gsub('([a-zA-Z])[a-z0-9]+', '%1') ..
+    (path:match '[a-zA-Z]([a-z0-9]*)$' or '')
+end
+
 return {
    {
       "nvim-tree/nvim-tree.lua",
@@ -11,11 +19,19 @@ return {
          vim.opt.termguicolors = true
       end,
       keys = {
-         {"<leader>e","<cmd>NvimTreeToggle<CR>", desc = "Nvim Tree Toggle"},
+         {"<leader>e",
+         function()
+            local api = require 'nvim-tree.api'
+            api.tree.toggle({find_file = true})
+         end
+         , desc = "Nvim Tree Toggle"},
       },
       opts = {
          git = {
             enable = true,
+         },
+         filters = {
+            git_ignored = false,
          },
          renderer = {
             highlight_git = true,
@@ -28,6 +44,25 @@ return {
          view = {
             side = "left",
          },
-      }
+      },
+      config = function(_, opts)
+         -- This script clars the status line in the nvim-tree buffer,
+         -- this is needed because the window is very thight
+         local nt = require 'nvim-tree'
+         local api = require 'nvim-tree.api'
+
+         -- Label function to make folders paths shorter
+         opts.renderer.root_folder_label = label
+         opts.renderer.group_empty = label
+         nt.setup(opts)
+         api.events.subscribe(api.events.Event.TreeOpen,
+         function()
+            local tree_winid = api.tree.winid()
+
+            if tree_winid ~= nil then
+               vim.api.nvim_set_option_value('statusline', '%t', {win = tree_winid})
+            end
+         end)
+      end,
    }
 }
