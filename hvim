@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+export NVIM_APPNAME="${NVIM_APPNAME:-"hvim"}"
+
+export HVIM_CONFIG_DIR="${HVIM_CONFIG_DIR:-"$HOME/.config/hvim"}"
+export HVIM_CACHE_DIR="${HVIM_CACHE_DIR:-"$HOME/.cache/hvim"}"
+
+export HVIM_BASE_DIR="${HVIM_BASE_DIR:-"$HOME/.config/hvim"}"
+
+exec -a "$NVIM_APPNAME" nvim -u "$HVIM_BASE_DIR/init.lua" "$@"
