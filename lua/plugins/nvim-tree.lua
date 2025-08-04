@@ -1,6 +1,7 @@
 return {
    {
       "nvim-tree/nvim-tree.lua",
+      tag = "v1.13.0",
       lazy = false,
       init = function()
          -- disable netrw at the very start of your init.lua

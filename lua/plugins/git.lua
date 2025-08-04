@@ -1,5 +1,5 @@
 return {
-   {"lewis6991/gitsigns.nvim", opts = {}},
+   {"lewis6991/gitsigns.nvim", tag = "v1.0.2", opts = {}},
    {
       "f-person/git-blame.nvim",
       -- load the plugin at startup
