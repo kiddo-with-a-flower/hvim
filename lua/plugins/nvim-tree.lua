@@ -32,6 +32,10 @@ return {
          },
          filters = {
             git_ignored = false,
+            custom = {
+               '.cache',
+               '.git',
+            }
          },
          renderer = {
             highlight_git = true,
