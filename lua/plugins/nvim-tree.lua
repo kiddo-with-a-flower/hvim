@@ -33,8 +33,8 @@ return {
          filters = {
             git_ignored = false,
             custom = {
-               '.cache',
-               '.git',
+               '^\\.cache$',
+               '^\\.git$',
             }
          },
          renderer = {
@@ -67,6 +67,11 @@ return {
                vim.api.nvim_set_option_value('statusline', '%t', {win = tree_winid})
             end
          end)
+         vim.api.nvim_create_autocmd({'BufEnter', 'BufWinEnter'}, {
+            callback = function(ev)
+               api.tree.find_file()
+            end
+         })
       end,
    }
 }
