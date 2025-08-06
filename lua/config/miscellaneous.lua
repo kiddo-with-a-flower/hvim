@@ -12,3 +12,9 @@ vim.opt.undofile = true
 vim.opt.undodir = os.getenv("HOME") .. "/.local/var/nvim/undo"
 vim.opt.undolevels = 1000
 vim.opt.undoreload = 10000
+--
+-- Enable spell checking
+vim.opt.spell = true                     -- Turn on spell checking
+vim.opt.spelllang = { 'en_us', 'it' } -- Set the spell checking language (English US)
+
+
