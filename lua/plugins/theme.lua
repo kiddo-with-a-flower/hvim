@@ -8,5 +8,5 @@ return {
       config = function(_,opts)
          vim.cmd[[colorscheme molokai]]
       end,
-   }
+   },
 }
