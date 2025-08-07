@@ -48,6 +48,12 @@ return {
          view = {
             side = "left",
          },
+         sync_root_with_cwd = true,
+         respect_buf_cwd = true,
+         update_focused_file = {
+            enable = true,
+            update_root = true
+         },
       },
       config = function(_, opts)
          -- This script clars the status line in the nvim-tree buffer,
