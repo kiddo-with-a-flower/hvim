@@ -17,8 +17,8 @@ return {
       'akinsho/toggleterm.nvim',
       tag = "v2.13.1",
       keys = {
-         {"<C-\\>", "<cmd>lua toggle_floating_terminal()<CR>", mode = "n", desc = "Floating Terminal"},
-         {"<C-\\>", "<cmd>lua toggle_floating_terminal()<CR>", mode = "t", desc = "Floating Terminal"},
+         {"<C-\\>", toggle_floating_terminal, mode = "n", desc = "Floating Terminal"},
+         {"<C-\\>", toggle_floating_terminal, mode = "t", desc = "Floating Terminal"},
       },
       opts = {}
    }
