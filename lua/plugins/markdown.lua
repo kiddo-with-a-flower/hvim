@@ -27,5 +27,50 @@ return {
          end,
          desc = "Search Emoji"},
       }
-   }
+   },
+   {
+      'edluffy/hologram.nvim',
+      opts = {
+         auto_display = true,
+      }
+   },
+   {
+      'MeanderingProgrammer/render-markdown.nvim',
+      opts = {
+         completions = {
+            coq = {
+               enabled = true
+            }
+         },
+      },
+      dependencies = {
+         'nvim-treesitter/nvim-treesitter',
+         'nvim-tree/nvim-web-devicons'
+      },
+   },
+   {
+      "bngarren/checkmate.nvim",
+      ft = "markdown", -- Lazy loads for Markdown files matching patterns in 'files'
+      version = "~0.10.0", -- pins to minor 0.10.x
+      lazy = false,
+      opts = {
+         -- Disable checkboxes render in order to use the ones from render-markdown
+         todo_markers = {
+            unchecked = "[ ]",
+            checked = "[x]",
+         },
+         files = {
+            "*.md",
+         }
+      },
+   },
+   {
+      "HakonHarnes/img-clip.nvim",
+      event = "VeryLazy",
+      opts = {
+      },
+      keys = {
+        { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+      },
+   },
 }
