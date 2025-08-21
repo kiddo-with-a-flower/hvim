@@ -36,6 +36,7 @@ return {
    },
    {
       'MeanderingProgrammer/render-markdown.nvim',
+      version = '8.7.0',
       opts = {
          completions = {
             coq = {
@@ -73,4 +74,18 @@ return {
         { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
       },
    },
+   {
+      "potamides/pantran.nvim",
+      opts = {
+         default_engine = "google",
+         engines = {
+            google = {
+               default_source = "it",
+            }
+         }
+      },
+      keys = {
+         {"<leader>tt", "<cmd>Pantran<cr>", desc = "Open Translate"}
+      }
+   }
 }
