@@ -69,6 +69,13 @@ return {
       "HakonHarnes/img-clip.nvim",
       event = "VeryLazy",
       opts = {
+         filetypes = {
+           codecompanion = {
+             prompt_for_file_name = false,
+             template = "[Image]($FILE_PATH)",
+             use_absolute_path = true,
+           },
+         },
       },
       keys = {
         { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
@@ -87,5 +94,15 @@ return {
       keys = {
          {"<leader>tt", "<cmd>Pantran<cr>", desc = "Open Translate"}
       }
+   },
+   {
+      "richardbizik/nvim-toc",
+      ft = "markdown", -- Lazy loads for Markdown files matching patterns in 'files'
+      opts = {
+      },
+      keys = {
+        { "<leader>mt", "<cmd>TOC<cr>", desc = "Creates an ordered MD list table of contents" },
+        { "<leader>mtu", "<cmd>TOCList<cr>", desc = "Creates an unordered MD list table of contents" },
+      },
    }
 }
