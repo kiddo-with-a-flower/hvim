@@ -13,7 +13,7 @@ return {
            -- parser_install_dir = "/some/path/to/store/parsers",
 
            -- A list of parser names, or "all"
-           ensure_installed = { "c", "cpp", "cmake", "python", "lua", "rust", "yaml", "markdown" },
+           ensure_installed = { "c", "cpp", "cmake", "python", "lua", "rust", "yaml", "markdown", "matlab" },
 
            -- Install parsers synchronously (only applied to `ensure_installed`)
            sync_install = false,
