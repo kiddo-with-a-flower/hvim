@@ -40,13 +40,13 @@ return {
             chat = {
                adapter = {
                   name = "copilot_enterprise",
-                  model = "claude-sonnet-4",
+                  model = "claude-sonnet-4.5",
                },
             },
             inline = {
                adapter = {
                   name = "copilot_enterprise",
-                  model = "claude-sonnet-4",
+                  model = "claude-haiku-4.5",
                },
             },
             cmd = {
@@ -83,15 +83,15 @@ return {
       },
       keys = {
         -- Quick access with Ctrl+C prefix
-         { "<C-c>c", "<cmd>CodeCompanionChat toggle<cr>", desc = "Toggle CodeCompanion chat" },
-         { "<C-c>a", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanion actions" },
-         { "<C-c>i", "<cmd>CodeCompanion<cr>", desc = "Inline CodeCompanion", mode = {"n", "v"} },
-         { "<C-c>e", "<cmd>CodeCompanionCmd Explain<cr>", desc = "Explain code", mode = "v" },
-         { "<C-c>f", "<cmd>CodeCompanionCmd Fix<cr>", desc = "Fix code", mode = "v" },
-         { "<C-c>o", "<cmd>CodeCompanionCmd Optimize<cr>", desc = "Optimize code", mode = "v" },
-         { "<C-c>d", "<cmd>CodeCompanionCmd Document<cr>", desc = "Document code", mode = "v" },
-         { "<C-c>t", "<cmd>CodeCompanionCmd Tests<cr>", desc = "Generate tests", mode = "v" },
-         { "<C-c>q", "<cmd>CodeCompanionCmd<cr>", desc = "Quick command" },
+         { "<leader>ct", "<cmd>CodeCompanionChat toggle<cr>", desc = "Toggle CodeCompanion chat" },
+         { "<leader>ca", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanion actions" },
+         { "<leader>ci", "<cmd>CodeCompanion<cr>", desc = "Inline CodeCompanion", mode = {"n", "v"} },
+         { "<leader>ce", "<cmd>CodeCompanionCmd Explain<cr>", desc = "Explain code", mode = "v" },
+         { "<leader>cf", "<cmd>CodeCompanionCmd Fix<cr>", desc = "Fix code", mode = "v" },
+         { "<leader>co", "<cmd>CodeCompanionCmd Optimize<cr>", desc = "Optimize code", mode = "v" },
+         { "<leader>cd", "<cmd>CodeCompanionCmd Document<cr>", desc = "Document code", mode = "v" },
+         { "<leader>ct", "<cmd>CodeCompanionCmd Tests<cr>", desc = "Generate tests", mode = "v" },
+         { "<leader>cq", "<cmd>CodeCompanionCmd<cr>", desc = "Quick command" },
       },
       event = "BufEnter",
       dependencies = {
