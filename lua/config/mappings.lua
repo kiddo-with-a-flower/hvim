@@ -57,14 +57,19 @@ keymap("v", "<a-k>", ":m .-2<cr>==", opts)
 
 -- Visual Block --
 -- Move text up and down
-    --Terminal --
+--Terminal --
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
---Better terminal navigation
+-- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Navigation between open buffers
+keymap("n", "<leader>bp", ":BufferPick<CR>", opts)
+keymap("n", "<leader>l", ":BufferNext<CR>", opts)
+keymap("n", "<leader>h", ":BufferPrevious<CR>", opts)
