@@ -5,7 +5,7 @@ return {
       tag = '0.1.8',
       dependencies = {
          'nvim-lua/plenary.nvim',
-         'nvim-tree/nvim-tree.lua',
+         'mikavilpas/yazi.nvim',
       },
       opts = {
          pickers = {
@@ -49,11 +49,11 @@ return {
       end,
       keys = {
          {'<leader>t', desc = 'Telescope'},
-         {'<leader>tf', function() require'nvim-tree.api'.tree.close(); require('telescope.builtin').find_files() end, desc = 'Find Files'},
-         {'<leader>tg', function() require'nvim-tree.api'.tree.close(); require('telescope.builtin').live_grep() end, desc = 'Live Grep'},
-         {'<leader>tc', function() require'nvim-tree.api'.tree.close(); require('telescope.builtin').commands() end, desc = 'Commands'},
-         {'<leader>tb', function() require'nvim-tree.api'.tree.close(); require('telescope.builtin').buffers() end, desc = 'Buffers'},
-         {'<leader>th', function() require'nvim-tree.api'.tree.close(); require('telescope.builtin').help_tags() end, desc = 'Help Tags'},
+         {'<leader>tf', function() require('telescope.builtin').find_files() end, desc = 'Find Files'},
+         {'<leader>tg', function() require('telescope.builtin').live_grep() end, desc = 'Live Grep'},
+         {'<leader>tc', function() require('telescope.builtin').commands() end, desc = 'Commands'},
+         {'<leader>tb', function() require('telescope.builtin').buffers() end, desc = 'Buffers'},
+         {'<leader>th', function() require('telescope.builtin').help_tags() end, desc = 'Help Tags'},
       }
    }
 }
