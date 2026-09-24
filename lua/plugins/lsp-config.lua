@@ -116,11 +116,7 @@ return {
       init = function()
          vim.g.coq_settings = {
             -- if you want to start COQ at startup
-            auto_start = true,
             display = {
-               statusline = {
-                  helo = false
-               }
             }
          }
       end,
@@ -138,5 +134,11 @@ return {
          {'gcc', desc = "Toggle single line comment"},
          {'gbc', desc = "Toggle block comment"},
       },
+   },
+   {
+      'kevinhwang91/nvim-ufo',
+      dependencies = {
+          'kevinhwang91/promise-async'
+      }
    }
 }
