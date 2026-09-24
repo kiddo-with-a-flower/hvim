@@ -38,6 +38,7 @@ return {
       'MeanderingProgrammer/render-markdown.nvim',
       version = '8.7.0',
       opts = {
+         only_render_image_at_cursor = true,
          completions = {
             coq = {
                enabled = true

@@ -1,3 +1,10 @@
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+      vim.treesitter.stop()
+    end,
+})
+
 return {
    {
       'nvim-treesitter/nvim-treesitter',
@@ -13,7 +20,7 @@ return {
            -- parser_install_dir = "/some/path/to/store/parsers",
 
            -- A list of parser names, or "all"
-           ensure_installed = { "c", "cpp", "cmake", "python", "lua", "rust", "yaml", "markdown", "matlab", "pascal" },
+           ensure_installed = { "c", "cpp", "cmake", "python", "lua", "rust", "yaml", "matlab", "pascal" },
 
            -- Install parsers synchronously (only applied to `ensure_installed`)
            sync_install = false,
